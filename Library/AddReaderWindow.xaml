@@ -1,0 +1,46 @@
+﻿<Window x:Class="Library.AddReaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="AddReaderWindow" Style="{StaticResource AnotherWindows}" WindowStartupLocation="CenterScreen" DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Image Source="./Images/pngegg.png" Width="103" Height="81" Grid.Row="0" Grid.Column="0" Margin="0 0 80 0"></Image>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 30 0 0">
+            <Button Click="backTo"  Style="{StaticResource Navigation}" Margin="0 0 0 20" Content="Назад"></Button>
+            <Button Click="Exit"  Style="{StaticResource Navigation}" Margin="0 0 0 20" Content="Выход"></Button>
+        </StackPanel>
+        <Label x:Name="what" Grid.Row="0" Grid.Column="1" Style="{StaticResource Header}" Margin="30 35 0 0" >Читатели</Label>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="30,0,0,0" Height="300">
+            <Label>Фамилия:</Label>
+            <TextBox x:Name="lastnameText" Text="{Binding Readerr.LastName}"></TextBox>
+            <Line></Line>
+            <Label>Имя:</Label>
+            <TextBox x:Name="nameText" Text="{Binding Readerr.ReaderName}"></TextBox>
+            <Line></Line>
+            <Label>Отчество:</Label>
+            <TextBox x:Name="surnmaeText" Text="{Binding Readerr.SurName}"></TextBox>
+            <Line></Line>
+            <Label>Электронная почта:</Label>
+            <TextBox x:Name="emailText" Text="{Binding Readerr.ReaderEmail}"></TextBox>
+            <Line></Line>
+            <Label>Телефон:</Label>
+            <TextBox x:Name="phoneText" Text="{Binding Readerr.Phone}"></TextBox>
+            <Line></Line>
+            <StackPanel Orientation="Horizontal" Width="276" HorizontalAlignment="Left" Margin="0 20">
+                <Button Click="add" Style="{StaticResource OformButton}" Margin="0 0 10 0">Добавить</Button>
+                <Button Click="rem" Style="{StaticResource OformButton}" Margin="15 0 10 0">Отменить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
